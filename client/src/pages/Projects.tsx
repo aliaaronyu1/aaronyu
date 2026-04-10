@@ -12,7 +12,7 @@ export default function Projects() {
       <FadeIn>
         <h1 className="text-4xl md:text-5xl font-extrabold mb-4 text-gradient">Featured Work</h1>
         <p className="text-xl text-muted-foreground mb-12 max-w-2xl">
-          A selection of robust applications and tools I've engineered from the ground up.
+          A selection of robust applications and tools I've engineered.
         </p>
       </FadeIn>
 
@@ -70,18 +70,19 @@ export default function Projects() {
                   )}
 
                   <div className="flex items-center gap-4 mt-auto">
-                    {project.link && (
-                      <a href={project.link} target="_blank" rel="noreferrer">
+                    <a href="#" target="_blank" rel="noreferrer">
                         <Button className="rounded-full shadow-lg shadow-primary/10 hover:shadow-primary/30 transition-all">
                           Live Demo <ExternalLink className="w-4 h-4 ml-2" />
                         </Button>
                       </a>
+                    {project.link && (
+                      <a href={project.link} target="_blank" rel="noreferrer">
+                        <Button variant="outline" className="rounded-full bg-transparent border-white/10 hover:bg-white/5 transition-all">
+                          Source <Github className="w-4 h-4 ml-2" />
+                        </Button>
+                      </a>
                     )}
-                    <a href="#" target="_blank" rel="noreferrer">
-                      <Button variant="outline" className="rounded-full bg-transparent border-white/10 hover:bg-white/5 transition-all">
-                        Source <Github className="w-4 h-4 ml-2" />
-                      </Button>
-                    </a>
+
                   </div>
                 </div>
               </div>
