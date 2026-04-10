@@ -20,15 +20,17 @@ export default function Home() {
         
         <FadeIn delay={0.2}>
           <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight leading-tight text-gradient">
-            Hi, I'm Ali Aaron Yu.<br />
+            Hi, I'm Aaron Yu.<br />
             <span className="text-gradient-primary">Full Stack Engineer.</span>
           </h1>
         </FadeIn>
         
         <FadeIn delay={0.3}>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            I craft exceptionally robust backends and stunning, interactive frontends. 
-            Transforming complex problems into elegant, production-ready solutions.
+            Welcome to my website. I am an early career engineer looking for work. I have
+            experience in backend architecture and frontend engineering. I am passionate 
+            about building scalable, secure, and user-friendly applications. Feel free to 
+            explore my projects and blog posts to see what I've been working on.
           </p>
         </FadeIn>
 
@@ -51,7 +53,7 @@ export default function Home() {
       <section className="w-full">
         <FadeIn delay={0.5}>
           <h2 className="text-3xl font-bold mb-12 text-center">Core Expertise</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="bg-card/50 backdrop-blur-sm border border-white/5 rounded-2xl p-8 hover:bg-card hover:border-primary/30 transition-all duration-300 group">
               <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
                 <Terminal className="w-6 h-6" />
@@ -72,7 +74,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="bg-card/50 backdrop-blur-sm border border-white/5 rounded-2xl p-8 hover:bg-card hover:border-primary/30 transition-all duration-300 group">
+            {/* <div className="bg-card/50 backdrop-blur-sm border border-white/5 rounded-2xl p-8 hover:bg-card hover:border-primary/30 transition-all duration-300 group">
               <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
                 <Zap className="w-6 h-6" />
               </div>
@@ -80,7 +82,7 @@ export default function Home() {
               <p className="text-muted-foreground leading-relaxed">
                 Deploying and managing infrastructure on modern cloud platforms. CI/CD pipelines, Docker, and seamless integrations.
               </p>
-            </div>
+            </div> */}
           </div>
         </FadeIn>
       </section>

@@ -136,12 +136,12 @@ export default function Contact() {
         <FadeIn delay={0.2} className="flex flex-col justify-center gap-8 lg:p-8">
           <div>
             <h3 className="text-xl font-bold mb-2">Location</h3>
-            <p className="text-muted-foreground">San Francisco, CA</p>
+            <p className="text-muted-foreground">San Francisco Bay Area, CA</p>
           </div>
           <div>
             <h3 className="text-xl font-bold mb-2">Email</h3>
             <a href="mailto:hello@aliaaron.com" className="text-primary hover:underline">
-              hello@aliaaron.com
+              aaron-yu1@outlook.com
             </a>
           </div>
           <div className="w-16 h-1 bg-gradient-to-r from-primary to-transparent rounded-full my-4" />
