@@ -9,6 +9,7 @@ export const projects = pgTable("projects", {
   link: text("link"),
   imageUrl: text("image_url"),
   technologies: text("technologies").array(),
+  demoLink: text("demo_link"),
 });
 
 export const blogPosts = pgTable("blog_posts", {

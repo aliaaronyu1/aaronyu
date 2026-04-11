@@ -70,11 +70,13 @@ export default function Projects() {
                   )}
 
                   <div className="flex items-center gap-4 mt-auto">
-                    <a href="#" target="_blank" rel="noreferrer">
+                    {project.demoLink && (
+                      <a href={project.demoLink} target="_blank" rel="noreferrer">
                         <Button className="rounded-full shadow-lg shadow-primary/10 hover:shadow-primary/30 transition-all">
                           Live Demo <ExternalLink className="w-4 h-4 ml-2" />
                         </Button>
                       </a>
+                    )}
                     {project.link && (
                       <a href={project.link} target="_blank" rel="noreferrer">
                         <Button variant="outline" className="rounded-full bg-transparent border-white/10 hover:bg-white/5 transition-all">
