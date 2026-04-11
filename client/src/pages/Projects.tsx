@@ -1,4 +1,5 @@
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink } from "lucide-react";
+import { LuGithub } from "react-icons/lu";
 import { useProjects } from "@/hooks/use-projects";
 import { FadeIn } from "@/components/layout/FadeIn";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -80,7 +81,7 @@ export default function Projects() {
                     {project.link && (
                       <a href={project.link} target="_blank" rel="noreferrer">
                         <Button variant="outline" className="rounded-full bg-transparent border-white/10 hover:bg-white/5 transition-all">
-                          Source <Github className="w-4 h-4 ml-2" />
+                          Source <LuGithub className="w-4 h-4 ml-2" />
                         </Button>
                       </a>
                     )}

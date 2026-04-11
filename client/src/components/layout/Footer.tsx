@@ -1,4 +1,4 @@
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { LuGithub, LuLinkedin } from "react-icons/lu";
 import { Link } from "wouter";
 
 export function Footer() {
@@ -12,10 +12,10 @@ export function Footer() {
         
         <div className="flex items-center gap-4">
           <a href="https://github.com/aliaaronyu1" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors">
-            <Github className="w-4 h-4" />
+            <LuGithub className="w-4 h-4" />
           </a>
           <a href="https://www.linkedin.com/in/aarong-yu" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors">
-            <Linkedin className="w-4 h-4" />
+            <LuLinkedin className="w-4 h-4" />
           </a>
           {/* <a href="https://twitter.com" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors">
             <Twitter className="w-4 h-4" />
