@@ -18,6 +18,7 @@ export default function BlogPost() {
         <Skeleton className="h-4 w-24 mb-8" />
         <Skeleton className="h-12 w-full mb-6" />
         <Skeleton className="h-4 w-48 mb-12" />
+        <Skeleton className="aspect-video w-full rounded-3xl mb-12" />
         <div className="space-y-4">
           <Skeleton className="h-4 w-full" />
           <Skeleton className="h-4 w-full" />
@@ -56,6 +57,16 @@ export default function BlogPost() {
           <Calendar className="w-4 h-4 text-primary" />
           {post.publishedAt ? format(new Date(post.publishedAt), 'MMMM d, yyyy') : 'Draft'}
         </div>
+
+        {post.imageUrl && (
+          <div className="relative aspect-video mb-12 overflow-hidden rounded-3xl border border-white/10 bg-muted/20">
+            <img
+              src={post.imageUrl}
+              alt={post.title}
+              className="w-full h-full object-cover"
+            />
+          </div>
+        )}
       </FadeIn>
 
       <FadeIn delay={0.2}>
