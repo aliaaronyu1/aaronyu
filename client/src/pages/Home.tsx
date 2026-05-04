@@ -1,11 +1,11 @@
 import { Link } from "wouter";
-import { ArrowRight, Terminal, Layers, Zap } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/layout/FadeIn";
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center pt-12 md:pt-24 gap-24">
+    <div className="flex flex-col items-center pt-12 md:pt-24 pb-24">
       {/* Hero Section */}
       <section className="text-center max-w-4xl mx-auto flex flex-col items-center gap-8">
         <FadeIn delay={0.1}>
@@ -26,12 +26,34 @@ export default function Home() {
         </FadeIn>
         
         <FadeIn delay={0.3}>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Welcome to my website. I am an early career engineer looking for work. I have
-            experience in backend architecture and frontend engineering. I am passionate 
-            about building scalable, secure, and user-friendly applications. Feel free to 
-            explore my projects and blog posts to see what I've been working on.
-          </p>
+          <div className="mx-auto w-full max-w-2xl space-y-5 text-left text-base md:text-lg leading-relaxed text-muted-foreground">
+            <p className="text-foreground/90">
+              Welcome to my website. I’m a full-stack engineer who likes working in messy environments where things aren’t fully figured out yet.
+            </p>
+            <p>
+              I’ve mostly worked in startup settings. I’m used to owning features end to end, whether that’s backend logic, database design or figuring out the user experience on the front end. A lot of the job ends up being making tradeoff decisions and just getting things to move forward without getting immersed in the details.
+            </p>
+            <div className="space-y-2">
+              <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground/80">
+                Side projects
+              </p>
+              <p>
+                Outside of work, I spend time building side projects. Lately I’ve been focused on a journaling app called Center. Center explores how AI can guide users through journaling reflections without giving suggestions and advice immediately but asking questions instead.{" "}
+                <a
+                  href="https://aaronyu.onrender.com/blog/exploring-center"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium text-primary underline decoration-primary/40 underline-offset-4 transition-colors hover:text-primary/90 hover:decoration-primary/80"
+                >
+                  Read more about Center
+                </a>
+                .
+              </p>
+            </div>
+            <p>
+              I’m drawn to teams that value being smart, thoughtful and having high ownership, even when things are moving fast.
+            </p>
+          </div>
         </FadeIn>
 
         <FadeIn delay={0.4} className="flex flex-col sm:flex-row items-center gap-4 mt-4">
@@ -47,42 +69,22 @@ export default function Home() {
             </Button>
           </Link>
         </FadeIn>
-      </section>
 
-      {/* Expertise Section */}
-      <section className="w-full">
-        <FadeIn delay={0.5}>
-          <h2 className="text-3xl font-bold mb-12 text-center">Core Expertise</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-card/50 backdrop-blur-sm border border-white/5 rounded-2xl p-8 hover:bg-card hover:border-primary/30 transition-all duration-300 group">
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
-                <Terminal className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold mb-3">Backend Architecture</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Designing scalable, secure APIs and microservices using Node.js, Express, and PostgreSQL. Focus on performance and clean code.
-              </p>
+        <FadeIn delay={0.45}>
+          <div className="flex flex-col items-center gap-3 pt-6">
+            <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground/80">
+              Stack I use often
+            </p>
+            <div className="flex flex-wrap justify-center gap-2 max-w-xl">
+              {["React", "TypeScript", "Node.js", "PostgreSQL", "Tailwind CSS"].map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-white/5 bg-secondary/50 px-3 py-1 text-sm text-muted-foreground"
+                >
+                  {item}
+                </span>
+              ))}
             </div>
-            
-            <div className="bg-card/50 backdrop-blur-sm border border-white/5 rounded-2xl p-8 hover:bg-card hover:border-primary/30 transition-all duration-300 group">
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
-                <Layers className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold mb-3">Frontend Engineering</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Building pixel-perfect, responsive interfaces with React, TypeScript, and Tailwind CSS. Obsessed with user experience.
-              </p>
-            </div>
-
-            {/* <div className="bg-card/50 backdrop-blur-sm border border-white/5 rounded-2xl p-8 hover:bg-card hover:border-primary/30 transition-all duration-300 group">
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
-                <Zap className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold mb-3">DevOps & Cloud</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Deploying and managing infrastructure on modern cloud platforms. CI/CD pipelines, Docker, and seamless integrations.
-              </p>
-            </div> */}
           </div>
         </FadeIn>
       </section>
