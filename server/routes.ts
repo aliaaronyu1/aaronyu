@@ -1,6 +1,7 @@
 import type { Express } from "express";
 import type { Server } from "http";
 import { storage } from "./storage";
+import { notifyNewContactMessage } from "./notify";
 import { api } from "@shared/routes";
 import { z } from "zod";
 
@@ -31,6 +32,9 @@ export async function registerRoutes(
     try {
       const input = api.messages.create.input.parse(req.body);
       const message = await storage.createMessage(input);
+      void notifyNewContactMessage(message).catch((err) => {
+        console.error("Contact notification email failed:", err);
+      });
       res.status(201).json(message);
     } catch (err) {
       if (err instanceof z.ZodError) {
