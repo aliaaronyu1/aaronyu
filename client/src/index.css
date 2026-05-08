@@ -70,12 +70,13 @@
   .bg-notebook-lines {
     background-image: repeating-linear-gradient(
       to bottom,
-      rgba(245, 226, 192, 0.04) 0,
-      rgba(245, 226, 192, 0.04) 1px,
+      rgba(245, 226, 192, 0.06) 0,
+      rgba(245, 226, 192, 0.06) 1px,
       transparent 1px,
-      transparent 34px
+      transparent 32px
     );
-    mask-image: linear-gradient(to bottom, transparent 8%, black 30%, black 78%, transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 4%, black 20%, black 86%, transparent 100%);
+    opacity: 0.55;
   }
   
   .glass-panel {
