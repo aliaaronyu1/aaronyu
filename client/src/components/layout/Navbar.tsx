@@ -35,14 +35,14 @@ export function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 group">
-          <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
+          <div className="w-10 h-10 rounded-md bg-primary/15 border border-primary/30 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
             <Code2 className="w-5 h-5" />
           </div>
-          <span className="font-display font-bold text-lg tracking-tight">Aaron Yu.</span>
+          <span className="font-display font-semibold text-lg tracking-tight">Aaron Yu.</span>
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-1 p-1 rounded-full bg-secondary/50 border border-white/5 backdrop-blur-md">
+        <nav className="hidden md:flex items-center gap-1 p-1 rounded-md bg-secondary/45 border border-border backdrop-blur-md">
           {navItems.map((item) => {
             const isActive = location === item.href || (item.href !== "/" && location.startsWith(item.href));
             return (
@@ -50,7 +50,7 @@ export function Navbar() {
                 {isActive && (
                   <motion.div
                     layoutId="nav-pill"
-                    className="absolute inset-0 bg-secondary rounded-full -z-10 border border-white/10"
+                    className="absolute inset-0 bg-background/90 rounded -z-10 border border-border"
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}
@@ -62,7 +62,7 @@ export function Navbar() {
 
         <div className="hidden md:block">
           <Link href="/contact">
-            <Button className="rounded-full shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all">
+            <Button className="rounded-md shadow-lg shadow-primary/20 hover:shadow-primary/35 transition-all">
               Hire Me
             </Button>
           </Link>
@@ -82,14 +82,14 @@ export function Navbar() {
         <motion.div 
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="md:hidden absolute top-full left-0 w-full glass-panel border-t-0 border-b border-white/10 py-4 px-4 flex flex-col gap-2"
+          className="md:hidden absolute top-full left-0 w-full glass-panel border-t-0 border-b border-border py-4 px-4 flex flex-col gap-2"
         >
           {navItems.map((item) => (
             <Link 
               key={item.href} 
               href={item.href} 
               className={`p-3 rounded-lg flex items-center font-medium ${
-                location === item.href ? "bg-primary/10 text-primary" : "text-muted-foreground"
+                location === item.href ? "bg-primary/12 text-primary border border-primary/30" : "text-muted-foreground"
               }`}
             >
               {item.label}

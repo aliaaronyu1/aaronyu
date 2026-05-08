@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;1,400&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -7,36 +7,36 @@
 @layer base {
   :root {
     --font-sans: 'Geist', sans-serif;
-    --font-display: 'Plus Jakarta Sans', sans-serif;
+    --font-display: 'IBM Plex Serif', serif;
 
-    /* Professional Dark Mode Palette */
-    --background: 240 10% 4%;
-    --foreground: 0 0% 98%;
+    /* Product builder notebook palette */
+    --background: 230 16% 8%;
+    --foreground: 36 33% 95%;
 
-    --card: 240 10% 6%;
-    --card-foreground: 0 0% 98%;
+    --card: 230 15% 10%;
+    --card-foreground: 36 33% 95%;
 
-    --popover: 240 10% 6%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 230 15% 10%;
+    --popover-foreground: 36 33% 95%;
 
-    --primary: 217 91% 60%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 38 86% 61%;
+    --primary-foreground: 230 20% 10%;
 
-    --secondary: 240 10% 12%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 230 12% 15%;
+    --secondary-foreground: 36 33% 95%;
 
-    --muted: 240 10% 12%;
-    --muted-foreground: 240 5% 65%;
+    --muted: 230 11% 14%;
+    --muted-foreground: 35 18% 71%;
 
-    --accent: 217 91% 60%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 162 40% 62%;
+    --accent-foreground: 230 20% 10%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 240 10% 16%;
-    --input: 240 10% 16%;
-    --ring: 217 91% 60%;
+    --border: 230 10% 22%;
+    --input: 230 10% 22%;
+    --ring: 38 86% 61%;
 
     --radius: 0.75rem;
   }
@@ -49,6 +49,8 @@
   body {
     @apply bg-background text-foreground antialiased selection:bg-primary/30 selection:text-primary-foreground;
     font-family: var(--font-sans);
+    background-image: radial-gradient(circle at 12% 18%, rgba(245, 158, 11, 0.08) 0%, transparent 45%),
+      radial-gradient(circle at 82% 10%, rgba(45, 212, 191, 0.08) 0%, transparent 40%);
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
@@ -58,21 +60,37 @@
 
 @layer utilities {
   .bg-grid-pattern {
-    background-size: 40px 40px;
-    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-                      linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-    mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+    background-size: 52px 52px;
+    background-image: linear-gradient(to right, rgba(245, 226, 192, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(245, 226, 192, 0.05) 1px, transparent 1px);
+    mask-image: linear-gradient(to bottom, black 30%, transparent 100%);
+    opacity: 0.65;
+  }
+
+  .bg-notebook-lines {
+    background-image: repeating-linear-gradient(
+      to bottom,
+      rgba(245, 226, 192, 0.04) 0,
+      rgba(245, 226, 192, 0.04) 1px,
+      transparent 1px,
+      transparent 34px
+    );
+    mask-image: linear-gradient(to bottom, transparent 8%, black 30%, black 78%, transparent 100%);
   }
   
   .glass-panel {
-    @apply bg-background/60 backdrop-blur-xl border border-white/10 shadow-2xl;
+    @apply bg-background/75 backdrop-blur-md border border-border/80 shadow-xl;
   }
 
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-white/50;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-foreground via-foreground to-foreground/60;
   }
   
   .text-gradient-primary {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-400;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
+  }
+
+  .section-kicker {
+    @apply text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground/80;
   }
 }

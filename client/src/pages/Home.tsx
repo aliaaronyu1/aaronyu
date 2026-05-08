@@ -5,16 +5,13 @@ import { FadeIn } from "@/components/layout/FadeIn";
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center pt-12 md:pt-24 pb-24">
+    <div className="pt-12 md:pt-24 pb-24">
       {/* Hero Section */}
-      <section className="text-center max-w-4xl mx-auto flex flex-col items-center gap-8">
+      <section className="max-w-4xl mx-auto flex flex-col gap-10">
         <FadeIn delay={0.1}>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/80 border border-white/5 text-sm text-muted-foreground mb-4">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-            </span>
-            Available for new opportunities
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-secondary/80 border border-border text-sm text-muted-foreground">
+            <span className="h-2 w-2 rounded-full bg-accent"></span>
+            Currently building: Center
           </div>
         </FadeIn>
         
@@ -26,7 +23,7 @@ export default function Home() {
         </FadeIn>
         
         <FadeIn delay={0.3}>
-          <div className="mx-auto w-full max-w-2xl space-y-5 text-left text-base md:text-lg leading-relaxed text-muted-foreground">
+          <div className="w-full max-w-3xl space-y-5 text-left text-base md:text-lg leading-relaxed text-muted-foreground border-l border-border pl-5">
             <p className="text-foreground/90">
               Welcome to my website. I’m a full-stack engineer who likes working in messy environments where things aren’t fully figured out yet.
             </p>
@@ -34,7 +31,7 @@ export default function Home() {
               I’ve mostly worked in startup settings. I’m used to owning features end to end, whether that’s backend logic, database design or figuring out the user experience on the front end. A lot of the job ends up being making tradeoff decisions and just getting things to move forward without getting immersed in the details.
             </p>
             <div className="space-y-2">
-              <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground/80">
+              <p className="section-kicker">
                 Side projects
               </p>
               <p>
@@ -56,14 +53,14 @@ export default function Home() {
           </div>
         </FadeIn>
 
-        <FadeIn delay={0.4} className="flex flex-col sm:flex-row items-center gap-4 mt-4">
+        <FadeIn delay={0.4} className="flex flex-col sm:flex-row items-center gap-4 mt-1">
           <Link href="/projects">
-            <Button size="lg" className="rounded-full px-8 h-14 text-base shadow-xl shadow-primary/20 hover:shadow-primary/40 hover:-translate-y-1 transition-all">
+            <Button size="lg" className="rounded-md px-8 h-12 text-base shadow-lg shadow-primary/20 hover:shadow-primary/35 hover:-translate-y-0.5 transition-all">
               View My Work
             </Button>
           </Link>
           <Link href="/contact">
-            <Button variant="outline" size="lg" className="rounded-full px-8 h-14 text-base bg-secondary/50 border-white/10 hover:bg-secondary hover:-translate-y-1 transition-all group">
+            <Button variant="outline" size="lg" className="rounded-md px-8 h-12 text-base bg-secondary/50 border-border hover:bg-secondary hover:-translate-y-0.5 transition-all group">
               Contact Me
               <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
@@ -71,15 +68,15 @@ export default function Home() {
         </FadeIn>
 
         <FadeIn delay={0.45}>
-          <div className="flex flex-col items-center gap-3 pt-6">
-            <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground/80">
+          <div className="flex flex-col items-center sm:items-start gap-3 pt-5">
+            <p className="section-kicker">
               Stack I use often
             </p>
-            <div className="flex flex-wrap justify-center gap-2 max-w-xl">
+            <div className="flex flex-wrap justify-center sm:justify-start gap-2 max-w-xl">
               {["React", "TypeScript", "Node.js", "PostgreSQL", "Tailwind CSS"].map((item) => (
                 <span
                   key={item}
-                  className="rounded-full border border-white/5 bg-secondary/50 px-3 py-1 text-sm text-muted-foreground"
+                  className="rounded-md border border-border bg-secondary/40 px-3 py-1 text-sm text-muted-foreground"
                 >
                   {item}
                 </span>
